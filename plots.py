@@ -35,13 +35,12 @@ def plot_chromosome_heatmap_summary(adata, groupby="cnv_leiden",figsize=(10,15),
     cnv.pl.chromosome_heatmap_summary(adata, groupby=groupby, figsize=figsize, save=filename)
 
 
-def plot_3_cnv_umaps(adata, filename=None, path=None, colors=["cnv_leiden", "cnv_score", "cell_type"]):
+def plot_3_cnv_umaps(adata, filename=None, colors=["cnv_leiden", "cnv_score", "cell_type"]):
     """Plots 3 UMAPs with infercnvpy tool.
 
     Args:
         adata: AnnData object
         filename: name for saved figure
-        path: path where to save the figure
         colors: list of colors to use in the 3 UMAPS eg. ["cnv_leiden", "cnv_score", "cell_type"]
 
     """
@@ -58,17 +57,15 @@ def plot_3_cnv_umaps(adata, filename=None, path=None, colors=["cnv_leiden", "cnv
     )
     cnv.pl.umap(adata, color=colors[1], ax=ax2, show=False)
     cnv.pl.umap(adata, color=colors[2], ax=ax3)
-    if filename not None:
-        fig.savefig(os.path.join(path,filename), dpi=300)
+    fig.savefig(filename, dpi=300)
 
 
-def plot_3_scanpy_umaps(adata, filename=None, path=None, colors=["cnv_leiden", "cnv_score", "cell_type"]):
+def plot_3_scanpy_umaps(adata, filename=None, colors=["cnv_leiden", "cnv_score", "cell_type"]):
     """Plots 3 UMAPs with scanpy.
 
     Args:
         adata: AnnData object
         filename: name for saved figure
-        path: path where to save the figure
         colors: list of colors to use in the 3 UMAPS eg. ["cnv_leiden", "cnv_score", "cell_type"]
 
     """
@@ -79,20 +76,18 @@ def plot_3_scanpy_umaps(adata, filename=None, path=None, colors=["cnv_leiden", "
     sc.pl.umap(adata, color=colors[1], ax=ax2, show=False)
     sc.pl.umap(adata, color=colors[2], ax=ax3)
 
-    if filename not None:
-        fig.savefig(os.path.join(path,filename), dpi=300)
+    fig.savefig(filename, dpi=300)
 
-def plot_single_umap(adata, color, filename=None, path=None):
+def plot_single_umap(adata, color, filename=None):
     """Plot a single UMAP with scanpy
 
     Args:
         adata: AnnData object
         color: color to use in the UMAP
         filename: name of the figure
-        path: path where to save the figure
 
     """
 
-    sc.pl.umap(adata, color=color, size=40, save=os.path.join(path,filename))
+    sc.pl.umap(adata, color=color, size=40, save=filename)
 
 
