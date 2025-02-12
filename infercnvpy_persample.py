@@ -27,7 +27,7 @@ def read_and_process_adata(path: str) -> AnnData:
 	return adata
 
 
-def run_by_sample(adata: AnnData, samples: list, control: str, reference_key: str, reference_cat:str):
+def run_by_sample(adata: AnnData, samples: list, control: str, reference_key: str, reference_cat: str):
 	"""Run inferCNV analysis for the samples chosen.
 
 	Args:
