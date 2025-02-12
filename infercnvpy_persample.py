@@ -41,6 +41,8 @@ def run_by_sample(adata: AnnData, samples: list, control: str, reference_key: st
 		sample_adata = adata[adata.obs["sample"].isin([sample, control])
 
 		run_infercnv(sample_adata, reference_key, reference_cat)
+		cluster_by_cnvprofile(sample_adata)
+		umap_and_score(adata)
 		# do visuals
 
 
