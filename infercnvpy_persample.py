@@ -1,6 +1,7 @@
 from plots import *
 from preprocess import *
 from proportion_plots import *
+from run_infercnvpy import *
 import scanpy as sc
 import pandas as pd
 from anndata import AnnData
@@ -26,7 +27,7 @@ def read_and_process_adata(path: str) -> AnnData:
 	return adata
 
 
-def run_by_sample(adata: AnnData, samples: list):
+def run_by_sample(adata: AnnData, samples: list, control: str, reference_key: str, reference_cat: str):
 	"""Run inferCNV analysis for the samples chosen.
 
 	Args:
@@ -37,7 +38,12 @@ def run_by_sample(adata: AnnData, samples: list):
 
 
 	for sample in samples:
-		pass
+		sample_adata = adata[adata.obs["sample"].isin([sample, control])
+
+		run_infercnv(sample_adata, reference_key, reference_cat)
+		cluster_by_cnvprofile(sample_adata)
+		umap_and_score(adata)
+		# do visuals
 
 
 

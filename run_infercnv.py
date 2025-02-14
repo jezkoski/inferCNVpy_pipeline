@@ -39,7 +39,7 @@ def cluster_by_cnvprofile(adata: AnnData):
 	cnv.tl.leiden(adata)
 
 
-def umap_and_score(adatA: AnnData):
+def umap_and_score(adata: AnnData):
 	"""Create an umap and score the cnvs.
 	"""
 
