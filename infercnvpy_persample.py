@@ -46,7 +46,6 @@ def run_by_sample(adata: AnnData, samples: list, control: str, reference_key: st
 		# do visuals
 
 
-
 def main():
 
 	parser = optparse.OptionParser(description="inferCNVpy analysis for multiple samples.")
