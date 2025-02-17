@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import matplotpĺib.pyplot as plt
+import matplotĺib.pyplot as plt
 from matplotlib.pyplot import rc_context
 import scanpy as sc
 import infercnvpy as cnv
