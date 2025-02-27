@@ -27,6 +27,19 @@ def read_and_process_adata(path: str) -> AnnData:
 	return adata
 
 
+def visuals(sample_adata, adata_original, sample):
+	"""Do all the plots for the sample.
+
+	Args:
+		sample_adata: AnnData object for one sample
+		adata_original: AnnData object with all the samples
+		sample: sample name
+
+	"""
+
+
+
+
 def run_by_sample(adata: AnnData, samples: list, control: str, reference_key: str, reference_cat: str):
 	"""Run inferCNV analysis for the samples chosen.
 
