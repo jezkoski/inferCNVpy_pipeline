@@ -84,7 +84,7 @@ def plot_single_umap(adata, color, filename=None):
     Args:
         adata: AnnData object
         color: color to use in the UMAP
-        filename: name of the figure
+        filename: name of the figure, saved in figures/
 
     """
 
