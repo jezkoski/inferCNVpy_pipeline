@@ -9,6 +9,8 @@ The code snippets here are for doing the following:
 * Run basic inferCNVpy analysis for each sample in your object and add the results in the original object
 * Make standard plots like heatmaps and UMAPs
 * Run linear association analysis for gene expression and cnv_score
+* 
+
 
 ## To Do
 
